@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+     <h1>Анкета студента</h1>
+    <form action="#" method="post">
+        <fieldset>
+            <legend>Особисті дані</legend>
+            <style>body{line-height: 2;} </style>
+            <label>Full Name <input type="text" name="full_name" required></label><br>
+            <label>Email <input type="email" name="email" required></label><br>
+            <label>Password <input type="password" name="password" required></label><br>
+            <label>Age <input type="number" name="number" required></label><br>
+            <label>Date of birth <input type="date" name="dob" required></label><br>
+        </fieldset>
+
+        <fieldset>
+            <legend>Інші дані</legend>
+            Gender: <br>
+            <label><input type="radio" name="gender" value="male" required> Male</label><br>
+            <label><input type="radio" name="gender" value="female" required> Female</label><br>
+            <label><input type="radio" name="gender" value="other" required> Other</label><br>
+
+            Languages Known: <br>
+            <label><input type="checkbox" name="languages" value="english"> English</label><br>
+            <label><input type="checkbox" name="languages" value="ukrainian"> Ukrainian</label><br>
+            <label><input type="checkbox" name="languages" value="spanish"> Spanish</label><br>
+
+            Collage Subjects: <br>
+            <select name="subjects" multiple>
+                <option value="math">Math</option>
+                <option value="science">Science</option>
+                <option value="history">History</option>
+                <option value="literature">Literature</option>
+            </select><br>
+
+            Rate Interest in Math: <br>
+            <input type="range" min="1" max="10" name="interest"><br>
+            
+            Describe Skills: <br>
+            <textarea name="skills" rows="4" cols="30"></textarea><br>
+
+            Upload Resume: <br>
+            <input type="file" name="resume"><br>
+
+            Favorite Color: <br>
+            <input type="color" name="color"><br>
+
+            Preferred Study Time: <br>
+            <input type="time" name="studytime"><br>
+        </fieldset>
+
+        <input type="submit" value="Submit Survey">
+    </form>
+</body>
+</html>
