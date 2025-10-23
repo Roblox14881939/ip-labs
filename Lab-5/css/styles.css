@@ -1,0 +1,96 @@
+/* ===== FEATURED (під твою точну розмітку) ===== */
+
+/* 0) Контейнер секції */
+#featured_container{
+  background:#c2c2c2;
+  padding:32px 0;
+}
+#featured_container .container{
+  max-width:1120px;
+  margin:0 auto;
+  padding:0 16px;
+}
+
+/* 1) Сітка 2×2: .row розчиняємо, щоб елементи стали в одну grid-сітку */
+#featured_container .views-view-grid{
+  display:grid !important;
+  grid-template-columns: repeat(2, minmax(0,1fr)) !important;
+  gap:40px !important;
+}
+#featured_container .views-view-grid > .row{
+  display:contents !important;
+}
+
+/* 2) Прибираємо всі спадкові флоути/ширини з bootstrap-класів */
+#featured_container .views-col,
+#featured_container [class*="col-sm-"],
+#featured_container [class*="col-md-"],
+#featured_container [class*="col-lg-"],
+#featured_container [class*="col-"]{
+  float:none !important;
+  width:auto !important;
+  max-width:none !important;
+  margin:0 !important;
+}
+
+/* 3) Плитка: однакові розміри, обрізка зображення */
+#featured_container .views-col{
+  position:relative;
+  aspect-ratio:16 / 9;
+  border-radius:6px;
+  overflow:hidden;
+  background:#e5e7eb;
+  box-shadow:0 1px 0 rgba(0,0,0,.06);
+}
+/* обгортка-лінк займає всю плитку, прибираємо "білі шви" */
+#featured_container .views-col > div > span > a{
+  display:block;
+  height:100%;
+  line-height:0; /* прибирає мікро-проміжки від inline-елементів */
+}
+/* картинка заповнює плитку повністю */
+#featured_container .views-col img.img-responsive{
+  width:100% !important;
+  height:100% !important;
+  object-fit:cover !important;
+  display:block !important;
+  margin:0 !important;
+  border:0 !important;
+}
+
+/* 4) Синій бейдж заголовка внизу зліва */
+#featured_container .views-col h2{
+  position:absolute !important;
+  left:16px; bottom:16px;
+  margin:0 !important;
+  padding:8px 12px !important;
+  font-family:'Roboto Condensed', Arial, sans-serif !important;
+  font-weight:400 !important;
+  font-size:18px !important;
+  line-height:1.25 !important;
+  color:#fff !important;
+  background:#252775 !important;
+  border:0 !important;
+  text-decoration:none !important;
+  display:inline-block !important;
+  max-width:calc(100% - 32px);
+}
+/* колір/фон і для варіанта з <span> усередині */
+#featured_container .views-col h2 span{
+  color:#fff !important;
+  background:#252775 !important;
+}
+
+/* (якщо тінь не потрібна, ховаємо) */
+#featured_container .shadow_featured{ display:none; }
+
+/* Мобілка: 1 колонка */
+@media (max-width: 767.98px){
+  #featured_container .views-view-grid{ grid-template-columns:1fr !important; gap:24px !important; }
+  #featured_container .views-col h2{ left:12px; bottom:12px; font-size:16px !important; padding:8px 10px !important; }
+}
+
+/* Fallback, якщо немає aspect-ratio */
+@supports not (aspect-ratio: 1){
+  #featured_container .views-col{ height:300px !important; }
+}
