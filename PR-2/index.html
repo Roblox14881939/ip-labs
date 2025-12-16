@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <title>Практична робота №2 — Методологія BEM</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<!-- ================= HEADER ================= -->
+<header class="header">
+
+    <!-- Верхня панель -->
+    <div class="header__topbar">
+        <div class="header__container">
+
+            <a href="https://lpnu.ua" class="header__logo" target="_blank">
+                <img src="/PR-2/logo.png" alt="Логотип ЛП" class="header__logo-img">
+            </a>
+
+            <nav class="menu">
+                <ul class="menu__list">
+                    <li class="menu__item menu__item--active">
+                        <a href="index.html" class="menu__link">Головна</a>
+                    </li>
+                    <li class="menu__item">
+                        <a href="#featured_container" class="menu__link">Актуальне</a>
+                    </li>
+                    <li class="menu__item">
+                        <a href="#news" class="menu__link">Новини</a>
+                    </li>
+                </ul>
+            </nav>
+
+        </div>
+    </div>
+
+    <!-- Банер -->
+    <section class="header-hero" id="logos_container">
+        <div class="header-hero__container">
+            <h1 class="header-hero__title">Львівська політехніка</h1>
+            <p class="header-hero__subtitle">Національний університет</p>
+        </div>
+    </section>
+
+</header>
+
+<!-- ================= MAIN ================= -->
+<main>
+
+    <!-- ===== ЛАБОРАТОРНА 7 (FEATURED) ===== -->
+    <section id="featured_container">
+        <div class="container">
+
+            <div class="news-flex-container">
+
+                <div class="news-item">
+                    <a href="https://lpnu.ua/news/instytuty-dosiahnennia-plany-motyvatsiia-tematychnyi-nomer-zhurnalu-lvivska-politekhnika">
+                        <div class="img-wrapper">
+                            <img src="/Lab-7/img1.png" alt="Інститути" class="img-responsive">
+                            <div class="shadow_featured"></div>
+                            <h2><span>Інститути – досягнення, плани, мотивація</span></h2>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="news-item">
+                    <a href="https://lpnu.ua/news/konferentsiia-trudovoho-kolektyvu-natsionalnoho-universytetu-lvivska-politekhnika">
+                        <div class="img-wrapper">
+                            <img src="/Lab-7/img2.png" alt="Звіт ректора" class="img-responsive">
+                            <div class="shadow_featured"></div>
+                            <h2><span>Звіт в.о. ректора Львівської політехніки</span></h2>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="news-item">
+                    <a href="https://lpnu.ua/news/politekhnika-ekskursiina">
+                        <div class="img-wrapper">
+                            <img src="/Lab-7/img3.png" alt="Екскурсійна" class="img-responsive">
+                            <div class="shadow_featured"></div>
+                            <h2><span>Політехніка екскурсійна</span></h2>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="news-item">
+                    <a href="https://lpnu.ua/news/lvivska-politekhnika-u-reitynhakh-zakladiv-vyshchoi-osvity">
+                        <div class="img-wrapper">
+                            <img src="/Lab-7/img4.png" alt="Рейтинги" class="img-responsive">
+                            <div class="shadow_featured"></div>
+                            <h2><span>Львівська політехніка у рейтингах ЗВО</span></h2>
+                        </div>
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== NEWS (BEM) ===== -->
+    <section class="news" id="news">
+        <h2 class="news__heading">Новини університету</h2>
+
+        <div class="news__grid">
+
+            <article class="news__item">
+                <a class="news__media" href="https://lpnu.ua/news" target="_blank">
+                    <img src="/PR-2/news1.png" class="news__image">
+                    <span class="news__badge">16 ГРУД. 2025, 17:14</span>
+                </a>
+                <h3 class="news__title">
+                    <a href="https://lpnu.ua/news" target="_blank">
+                        Уряд затвердив експериментальний проєкт
+                    </a>
+                </h3>
+            </article>
+
+            <article class="news__item">
+                <a class="news__media" href="https://lpnu.ua/news" target="_blank">
+                    <img src="/PR-2/news2.png" class="news__image">
+                    <span class="news__badge">16 ГРУД. 2025, 15:28</span>
+                </a>
+                <h3 class="news__title">
+                    <a href="https://lpnu.ua/news" target="_blank">
+                        Львівська політехніка на конференції у Варшаві
+                    </a>
+                </h3>
+            </article>
+
+        </div>
+    </section>
+
+</main>
+
+<!-- ================= FOOTER ================= -->
+<footer class="footer">
+    <div class="footer__column">
+        <h4 class="footer__title">Про університет</h4>
+        <p><a href="https://lpnu.ua/about">Львівська політехніка</a></p>
+    </div>
+</footer>
+
+</body>
+</html>

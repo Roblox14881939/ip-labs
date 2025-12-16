@@ -1,0 +1,342 @@
+:root {
+    --primary-color: #004b8d;    /* синій ЛП */
+    --text-color: #333;
+    --light-bg: #f5f5f5;
+
+    --accent-color: #0b70a9;     /* синій для посилань */
+    --featured-badge: #252775;   /* темно-синій як у твоєму ЛР-7 */
+    --container-width: 1200px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    color: var(--text-color);
+    background: #fff;
+}
+
+/* ================= HEADER (синя тема) ================= */
+.header {
+    background: transparent;
+}
+
+/* верхня синя панель */
+.header__topbar {
+    background: var(--primary-color);
+}
+
+.header__container {
+    max-width: var(--container-width);
+    margin: 0 auto;
+    padding: 10px 15px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+}
+
+.header__logo {
+    display: inline-flex;
+    align-items: center;
+    text-decoration: none;
+}
+
+.header__logo-img {
+    height: 52px;
+    width: auto;
+    display: block;
+}
+
+/* меню */
+.menu__list {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 22px;
+}
+
+.menu__item {
+    margin-left: 0;
+}
+
+.menu__link {
+    text-decoration: none;
+    color: #fff;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    padding: 10px 0;
+    display: inline-block;
+}
+
+.menu__item--active .menu__link,
+.menu__link:hover {
+    color: #e8f2ff;
+    text-decoration: underline;
+}
+
+/* банер після меню (фон = друга фотка) */
+.header-hero {
+    background:
+        linear-gradient(rgba(0,0,0,0.25), rgba(0,0,0,0.25)),
+        url("/PR-2/backgroung.jpg") center / cover no-repeat;
+    padding: 90px 15px;
+    color: #fff;
+}
+
+.header-hero__container {
+    max-width: var(--container-width);
+    margin: 0 auto;
+}
+
+.header-hero__title {
+    font-size: 44px;
+    font-weight: 800;
+    line-height: 1.1;
+}
+
+.header-hero__subtitle {
+    margin-top: 12px;
+    font-size: 18px;
+    opacity: 0.95;
+}
+
+/* ================= FEATURED (CSS з ЛР-7, адаптовано під синю тему) ================= */
+/* Твій CSS з ЛР-7 я зберіг, тільки замінив фон і трохи підчистив */
+#featured_container {
+    background: #e6eef7; /* світло-синій замість сірого */
+    padding: 20px 0;
+    width: 100%;
+}
+
+.container {
+    max-width: var(--container-width);
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+.news-flex-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+}
+
+.news-item {
+    flex-basis: 100%;
+    max-width: 100%;
+    position: relative;
+    overflow: hidden;
+    border-radius: 6px;
+}
+
+@media (min-width: 768px) {
+    .news-flex-container {
+        justify-content: space-between;
+    }
+
+    .news-item {
+        flex-basis: calc(50% - 15px);
+        max-width: calc(50% - 15px);
+    }
+}
+
+.img-wrapper {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.img-responsive {
+    display: block;
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+/* градієнт внизу */
+.shadow_featured {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 75%;
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0), rgba(230, 238, 247, 0.92));
+    pointer-events: none;
+}
+
+#featured_container h2 {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    margin: 0;
+    padding: 20px;
+    width: 100%;
+    z-index: 2;
+}
+
+#featured_container a {
+    text-decoration: none;
+}
+
+#featured_container h2 span {
+    background: var(--featured-badge);
+    color: #fff;
+    padding: 5px 10px;
+    font-size: 18px;
+    line-height: 1.4;
+    box-shadow: -10px 0 0 var(--featured-badge), 10px 0 0 var(--featured-badge);
+    transition: background 0.3s ease-out;
+}
+
+#featured_container a:hover h2 span {
+    background: #1a1c55;
+}
+
+/* ================= NEWS (як на скріні) ================= */
+.news {
+    padding: 30px 15px;
+    max-width: var(--container-width);
+    margin: 0 auto;
+}
+
+.news__heading {
+    margin-bottom: 20px;
+}
+
+.news__grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 24px;
+}
+
+.news__item {
+    background: #fff;
+    border: 1px solid #e9e9e9;
+    border-radius: 6px;
+    overflow: hidden;
+}
+
+.news__media {
+    position: relative;
+    display: block;
+    text-decoration: none;
+}
+
+.news__image {
+    width: 100%;
+    height: 190px;
+    object-fit: cover;
+    display: block;
+}
+
+.news__badge {
+    position: absolute;
+    left: 12px;
+    bottom: 12px;
+    background: rgba(37, 39, 117, 0.92); /* темно-синя плашка */
+    color: #fff;
+    font-size: 13px;
+    padding: 8px 10px;
+    border-radius: 3px;
+}
+
+.news__title {
+    padding: 18px;
+    font-size: 22px;
+    line-height: 1.25;
+    font-weight: 800;
+}
+
+.news__title a {
+    color: var(--accent-color);
+    text-decoration: none;
+}
+
+.news__title a:hover {
+    text-decoration: underline;
+}
+
+/* ================= FOOTER ================= */
+.footer {
+    background: var(--primary-color);  /* синій */
+    color: #fff;
+    display: flex;
+    gap: 20px;
+    padding: 30px 15px;
+}
+
+.footer__column {
+    flex: 1;
+}
+
+.footer__title {
+    margin-bottom: 10px;
+}
+
+.footer a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.footer a:hover {
+    text-decoration: underline;
+}
+
+/* ================= MEDIA ================= */
+@media (max-width: 767px) {
+    .header__container {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .menu__list {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 6px;
+        margin-top: 10px;
+        width: 100%;
+    }
+
+    .header-hero {
+        padding: 55px 15px;
+    }
+
+    .header-hero__title {
+        font-size: 28px;
+    }
+
+    .header-hero__subtitle {
+        font-size: 16px;
+    }
+
+    .news__grid {
+        grid-template-columns: 1fr;
+    }
+
+    .news__image {
+        height: 180px;
+    }
+
+    .footer {
+        flex-direction: column;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+    .header-hero__title {
+        font-size: 36px;
+    }
+}
+
+@media (min-width: 1024px) {
+    .header-hero__title {
+        font-size: 46px;
+    }
+}
